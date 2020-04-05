@@ -1,0 +1,1 @@
+{username} has released their LifePod with no deactivation. This could mean they are in serious danger. If this notification does not disappear, get {username} help. Click To See Map

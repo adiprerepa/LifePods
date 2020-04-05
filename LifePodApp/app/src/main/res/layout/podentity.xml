@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id = "@+id/podRecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/dummy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        />
+
+<!--name-->
+    <TextView
+        android:id="@+id/username_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:layout_toLeftOf="@id/dummy"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_toStartOf="@id/dummy" />
+
+<!--coordinates-->
+    <TextView
+        android:id="@+id/coordinates_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/username_rv"
+        android:gravity="center_horizontal"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_toEndOf="@id/username_rv" />
+</RelativeLayout>

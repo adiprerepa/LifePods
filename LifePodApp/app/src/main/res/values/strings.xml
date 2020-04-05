@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">LifePod_App</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="email_address">Email Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="register_caps">REGISTER</string>
+    <string name="circle_name">circle name</string>
+    <string name="switch_circle">SWITCH CIRCLE</string>
+    <string name="leave_circle">leave circle</string>
+    <string name="lifepods">LIFEPODS</string>
+    <string name="pair_device">Device Status</string>
+    <string name="device_status">Device Status : %1$s</string>
+    <string name="device_address">Device Address : %1$s</string>
+    <string name="device_name">Device Name : %1$s</string>
+    <string name="title_activity_notification_map">Map</string>
+</resources>

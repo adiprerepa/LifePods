@@ -1,0 +1,141 @@
+syntax = "proto2";
+package pod;
+
+service EventService {
+
+    // update the threat priority of an event/user
+    rpc updateThreatPriority(ThreatEvent) returns (ThreatPriorityResponse);
+
+    // list all events for an id
+    rpc listEvents(EventIdentifier) returns (ListEvent);
+
+    // get all firebase topics
+    rpc getFirebaseNotificationTopics(FirebaseNotificationTopicRequest) returns (FirebaseNotificationTopicResponse);
+}
+
+service AuthenticationService {
+    // login service
+    rpc login(LoginRequest) returns (LoginResponse);
+
+    // circle join
+    rpc circleJoin(CircleRegisterRequest) returns (CircleRegisterResponse);
+
+    // circle creation
+    rpc circleCreate(CircleCreateRequest) returns (CircleCreateResponse);
+
+    // register
+    rpc register(SignUpRequest) returns (SignUpResponse);
+
+    // firebase Notification Token
+    rpc publishRegistrationToken(RegistrationTokenRequest) returns (RegistrationTokenResponse);
+}
+
+message FirebaseNotificationTopicRequest {
+    required string user_id = 1;
+}
+
+message FirebaseNotificationTopicResponse {
+    required bool hasTopics = 1;
+    repeated string topics = 2;
+}
+
+message RegistrationTokenRequest {
+    required string user_id = 1;
+    required string reg_token = 2;
+}
+
+message RegistrationTokenResponse {
+    required bool response = 1;
+}
+
+// for threat priority:
+// 0 is activation
+// 1 is deactivation
+// 2 is release
+message ThreatEvent {
+    required string user_id = 1;
+    required int32 threatPriority = 2;
+    required GpsCoords coordinates = 3;
+}
+
+message ThreatPriorityResponse {
+    required bool status = 1;
+}
+
+message GpsCoords {
+    required double latitude = 1;
+    required double longitude = 2;
+}
+
+// for notifs
+message Empty {}
+
+message EventIdentifier {
+    required string user_id = 1;
+}
+
+message ListEvent {
+    repeated ThreatEvent events = 1;
+}
+
+// Login & Sign Up & Circle Join
+
+message CircleUser {
+    required string username = 1;
+    optional GpsCoords lastCoordinates = 2;
+}
+
+message Circle {
+    repeated CircleUser circleUsers = 1;
+    required string circleName = 2;
+}
+
+message LoginRequest {
+    required string username = 1;
+    required string password = 2;
+}
+
+message LoginResponse {
+    // circles you have
+    // size() returns 0 if no circles exist - app will handle (redirect to create circle)
+    required bool status = 1;
+    required string user_id = 2;
+    repeated Circle responseCircles = 3;
+}
+
+// request to join circle
+message CircleRegisterRequest {
+    required string user_id = 1;
+    required string circleCode = 2;
+}
+
+message CircleRegisterResponse {
+    // null if authentication failed - app will handle
+    required Circle circleResponse = 1;
+}
+
+// sign up req, no encryption for now
+message SignUpRequest {
+    required string username = 1;
+    required string password = 2;
+    required string phone_number = 3;
+    required string email_address = 4;
+}
+
+// status of sign up, if something failed with db or something, return false.
+message SignUpResponse {
+    required bool status = 1;
+}
+// Activity should go - sign up -> log in -> add circle
+
+message CircleCreateRequest {
+    required string userId = 1;
+    required string circleName = 2;
+    required string circleId = 3;
+    required string creatingUser = 4;
+}
+
+message CircleCreateResponse {
+    // if we could create - otherwise it exists
+    required bool success = 1;
+}

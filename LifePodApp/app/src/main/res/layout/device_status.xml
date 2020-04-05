@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/device_status_tv"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/device_status" />
+    <TextView
+        android:id="@+id/device_addr_tv"
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_height="37dp"
+        android:text="@string/device_address" />
+    <TextView
+        android:id="@+id/device_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/device_name" />
+
+    <Button
+        android:id="@+id/arm_butt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Arm" />
+
+    <Button
+        android:id="@+id/deactivate_butt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Deactivate" />
+</LinearLayout>

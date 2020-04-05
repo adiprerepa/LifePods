@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "22501647391",
+    "firebase_url": "https://lifepodapp.firebaseio.com",
+    "project_id": "lifepodapp",
+    "storage_bucket": "lifepodapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22501647391:android:916a1f45b053180c10a12a",
+        "android_client_info": {
+          "package_name": "com.life_pod.lifepod_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22501647391-db36homrtdseu1vdr5ta1ek4mr6b7otu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.life_pod.lifepod_app",
+            "certificate_hash": "160260553eb48b26d722ed4830bb2dd5d5323afd"
+          }
+        },
+        {
+          "client_id": "22501647391-ipq9oeuno5mk5vab4pft5jbehn14v9r1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-agnF-dkK7ztQJKs87iaSVrDgyawuwUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22501647391-ipq9oeuno5mk5vab4pft5jbehn14v9r1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
