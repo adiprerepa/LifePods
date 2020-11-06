@@ -62,7 +62,7 @@ public class BluetoothService extends IntentService {
                     //  && EventStore.eventEntities.get(EventStore.eventEntities.size() - 1).isArm
                     //  && EventStore.eventEntities.get(EventStore.eventEntities.size() - 1).statusRpi.isStatus()
                     if (new String(statusByte).equals("T") && EventStore.eventEntities.get(EventStore.eventEntities.size() - 1).isArm) {
-                        Log.v(LOG_TAG, "FUKCKINGIGNGI_________________________: GOT A TRUE");
+                        Log.v(LOG_TAG, "GOT A TRUE");
                         // insert activation
                         EventStore.eventEntities.add(new EventStore.ReleaseEventEntity(Calendar.getInstance().getTime(), new BluetoothTask.ThreatStatusRpi(true, false), false, false));
                         // send activation
